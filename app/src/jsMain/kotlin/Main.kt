@@ -29,29 +29,36 @@ fun swipePage() {
 
 fun showPage() {
     val page = pages[currentIndex]
+    val img = document.getElementById("page_image")
 
-    val backtoStart = 
+    img?.setAttribute("src", page.imageUrl)
+    img?.setAttribute("alt", page.altText)
+
+    val backtoStart = document.getElementById("btn")
+
     if (currentIndex == pages.lastIndex) {
-            """
+        backtoStart?.innerHTML = """
         <button id="back_to_start">Tilbake til forsiden</button>
         """
-    }
-        else { ""
-    }
 
-    document.body?.innerHTML = """
-        <div class="booklet">
-            <img class="page_image" src="${page.imageUrl}" alt="${page.altText}" />
-            $backtoStart
-        </div>
-        """
-
-    document.getElementById("back_to_start")?.addEventListener("click", {goBackToStart()})
+        document.getElementById("back_to_start")?.addEventListener("click", {goBackToStart()})
+    }
+        else { 
+            backtoStart?.innerHTML = ""
+    }
 }
 
 fun main() {
+    document.body?.innerHTML = """
+        <div class="booklet">
+            <img id="page_image"/>
+             <div id="btn"></div>
+        </div>
+        """
+        
     showPage()
     swipePage()
+
     window.addEventListener("keydown", {e -> 
         when ((e as KeyboardEvent).key) {
             "ArrowRight" -> next()
