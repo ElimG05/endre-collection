@@ -11,3 +11,8 @@ fun prev(){
         showPage()
     }
 }
+
+fun goBackToStart() {
+    currentIndex = 0
+    showPage()
+}

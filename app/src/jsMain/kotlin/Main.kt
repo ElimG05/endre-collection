@@ -30,11 +30,23 @@ fun swipePage() {
 fun showPage() {
     val page = pages[currentIndex]
 
+    val backtoStart = 
+    if (currentIndex == pages.lastIndex) {
+            """
+        <button id="back_to_start">Tilbake til forsiden</button>
+        """
+    }
+        else { ""
+    }
+
     document.body?.innerHTML = """
         <div class="booklet">
             <img class="page_image" src="${page.imageUrl}" alt="${page.altText}" />
+            $backtoStart
         </div>
         """
+
+    document.getElementById("back_to_start")?.addEventListener("click", {goBackToStart()})
 }
 
 fun main() {
