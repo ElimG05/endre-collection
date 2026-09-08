@@ -1,6 +1,13 @@
 body {
     margin: 0;
-    background-color: #e9e4dc;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    background-image: url("../background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
     display: flex;
     justify-content: center;
     padding-top: 40px;
