@@ -22,7 +22,7 @@ fun showPage() {
 
     document.body?.innerHTML = """
         <div class="booklet">
-            <img class="page image" src="${page.imageUrl}" alt="${page.altText}" />
+            <img class="page_image" src="${page.imageUrl}" alt="${page.altText}" />
         </div>
         """
 }

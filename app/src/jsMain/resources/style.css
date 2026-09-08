@@ -1,0 +1,23 @@
+
+body {
+    background: #e9e4dc;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 50px 20px;
+}
+
+.booklet {
+    width: 100%;
+    max-width: 800px;
+}
+
+.page_image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
